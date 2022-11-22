@@ -25,8 +25,7 @@ O get_next_line é um programa que retornar uma linha do arquivo lido. Com seu d
 <details open>
 <summary> Bonus </summary>
 
-
-- :white_large_square: Get_next_line.
+- Bonus.
 
 </details>
 
