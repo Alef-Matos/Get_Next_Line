@@ -6,9 +6,11 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:26:51 by almatos           #+#    #+#             */
-/*   Updated: 2022/11/23 09:28:05 by almatos          ###   ########.fr       */
+/*   Updated: 2022/11/23 09:55:07 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "get_next_line.h"
 
 char	*get_next_line(int fd)
 {
