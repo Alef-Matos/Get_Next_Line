@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:04 by almatos           #+#    #+#             */
-/*   Updated: 2022/11/23 10:00:01 by almatos          ###   ########.fr       */
+/*   Updated: 2022/11/23 16:37:14 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ char	*gns_utils_strjoin(char const *str_1, char const *str_2)
 	char	*str_join;
 	int		len;
 
-	if (!str_1 || !str_2)
-		return (NULL);
 	len = gns_utils_len(str_1, 0) + gns_utils_len(str_2, 0);
 	str_join = (char *)malloc(len + 1);
 	if (!str_join)
