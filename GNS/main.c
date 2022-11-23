@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 09:27:10 by almatos           #+#    #+#             */
-/*   Updated: 2022/11/23 10:54:00 by almatos          ###   ########.fr       */
+/*   Created: 2022/11/23 10:55:51 by almatos           #+#    #+#             */
+/*   Updated: 2022/11/23 13:02:22 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
+#include <stdio.h>
+#include <fcntl.h>
 
-# define GET_NEXT_LINE_H
+int	main(void)
+{
+	char	*gnl;
+	int		fd;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 45
-# endif
-
-# include	<stdlib.h>
-# include	<unistd.h>
-
-char	*gns_utils_strjoin(char const *str_1, char const *str_2);
-int		gns_utils_len(const char *str, int len);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#endif
+	fd = open("texto", O_RDWR);
+	gnl = get_next_line(fd);
+	close(fd);
+	printf("teste: %s", gnl);
+	return (0);
+}
