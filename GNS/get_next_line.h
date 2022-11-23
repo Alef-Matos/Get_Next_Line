@@ -6,7 +6,25 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:10 by almatos           #+#    #+#             */
-/*   Updated: 2022/11/23 09:27:11 by almatos          ###   ########.fr       */
+/*   Updated: 2022/11/23 09:31:54 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#endif
