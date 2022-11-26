@@ -1,0 +1,3 @@
+/home/almatos/get_next_line/Desenvolv/cmake-build-debug/CMakeFiles/Desenvolv.dir
+/home/almatos/get_next_line/Desenvolv/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/almatos/get_next_line/Desenvolv/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -6,17 +6,29 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:04 by almatos           #+#    #+#             */
-/*   Updated: 2022/11/23 16:37:14 by almatos          ###   ########.fr       */
+/*   Updated: 2022/11/26 14:36:51 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	gns_utils_len(const char *str, int len)
+int	gnl_utils_len(const char *str, int flag)
 {
-	while (*str++)
-		len++;
-	return (len);
+	int	len;
+
+	len = 0;
+	if (flag == 0)
+	{
+		while (str[len])
+			len++;
+		return (len);
+	}
+	if (flag == 1)
+	{
+		while (str[len] && str[len] != '\n')
+			len++;
+		return (len);
+	}
 }
 
 char	*gns_utils_strjoin(char const *str_1, char const *str_2)
