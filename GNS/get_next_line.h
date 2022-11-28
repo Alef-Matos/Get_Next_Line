@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:10 by almatos           #+#    #+#             */
-/*   Updated: 2022/11/26 14:44:05 by almatos          ###   ########.fr       */
+/*   Updated: 2022/11/28 09:06:07 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct s_gnl
 {
 	char	*line;
 	long	read_buffer_size;
-	long	size_line;
 	long	index;
 }	t_gnl;
 
