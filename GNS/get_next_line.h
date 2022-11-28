@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:10 by almatos           #+#    #+#             */
-/*   Updated: 2022/11/28 09:06:07 by almatos          ###   ########.fr       */
+/*   Updated: 2022/11/28 16:50:07 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,13 @@
 
 # define GET_NEXT_LINE_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 45
-# endif
 # include	<stdlib.h>
 # include	<unistd.h>
 
-typedef struct s_gnl
-{
-	char	*line;
-	long	read_buffer_size;
-	long	index;
-}	t_gnl;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 45
+# endif
 
-
-char	*gns_utils_strjoin(char const *str_1, char const *str_2);
-int		gns_utils_len(const char *str, int len);
+int			gns_utils_len(const char *str, int len);
 
 #endif
