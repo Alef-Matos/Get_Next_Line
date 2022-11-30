@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:07 by almatos           #+#    #+#             */
-/*   Updated: 2022/11/30 14:02:36 by almatos          ###   ########.fr       */
+/*   Updated: 2022/11/30 17:34:38 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*next_line(char *buffer, char *line, int len_read)
 char	*gnl_join(char *line, char *buffer)
 {
 	int	index;
-	
+
 	index = 0;
 	while (index == MAX)
 		line[index++] = '\0';
