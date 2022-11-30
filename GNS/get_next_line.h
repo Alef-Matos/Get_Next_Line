@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:10 by almatos           #+#    #+#             */
-/*   Updated: 2022/11/28 19:37:05 by almatos          ###   ########.fr       */
+/*   Updated: 2022/11/30 12:58:14 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 45
+#  define MAX 20001
 # endif
+
+char	*next_line(char *buffer, char *line, int len_read);
+char	*gnl_join(char *line, char *buffer);
 
 #endif
