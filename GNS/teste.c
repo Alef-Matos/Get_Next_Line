@@ -10,7 +10,7 @@
 char    *gnl_join(char *line, char *buffer)
 {
 	int	index;
-
+	
 	index = 0;
 	while (buffer && buffer[index])
 		line[index++] = buffer[index];
@@ -24,8 +24,11 @@ int    main(void)
 {
     static char buffer[6] = "teste";
     char        *line;
+	int			index;
 
-    line = malloc(MAX * sizeof(char));
+	index = 0;
+    line = calloc(MAX, 1);
+
     line = gnl_join(line, buffer);
     printf("%s\n", line);
     printf("%s", buffer);
