@@ -1,24 +1,24 @@
-# include	<stdlib.h>
-# include	<unistd.h>
-# include   <stdio.h>
-# include	<fcntl.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-#  define MAX 20001
-# endif
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 1
+# define MAX 20001
+#endif
 
 typedef struct b_gnl
 {
-	char			*line;
-	int				len_read;
-	int				flag;
-	int				index;
-}t_gnl;
+	char	*line;
+	int		len_read;
+	int		flag;
+	int		index;
+}			t_gnl;
 
-char	*next_line(char *buffer, char *line, int len_read);
-char	*gnl_join(char *line, char *buff, int l_read, int l_line);
-int		gnl_len(const char *str, int flag);
+char		*next_line(char *buffer, char *line, int len_read);
+char		*gnl_join(char *line, char *buff, int l_read, int l_line);
+int			gnl_len(const char *str, int flag);
 
 int	gnl_len(const char *str, int flag)
 {
@@ -28,7 +28,7 @@ int	gnl_len(const char *str, int flag)
 	if (flag == 0)
 	{
 		while (str[len] && str[len] != '\n')
-		len++;
+			len++;
 	}
 	if (flag == 1)
 	{
@@ -38,7 +38,7 @@ int	gnl_len(const char *str, int flag)
 				return (1);
 			else
 				return (0);
-		len++;
+			len++;
 		}
 	}
 	return (len);
@@ -46,8 +46,8 @@ int	gnl_len(const char *str, int flag)
 
 char	*get_next_line(int fd)
 {
-	static char		buffer[BUFFER_SIZE +1];
-	t_gnl			gnl;
+	static char	buffer[BUFFER_SIZE + 1];
+	t_gnl		gnl;
 
 	gnl.index = -1;
 	gnl.flag = 0;
@@ -98,7 +98,7 @@ char	*gnl_join(char *line, char *buff, int l_read, int l_line)
 	{
 		line[index + l_line] = buff[index];
 		if (buff[index] == '\n')
-			break;
+			break ;
 	}
 	if (line[index + l_line] == '\n')
 		line[(index + l_line) + 1] = '\0';
@@ -114,11 +114,11 @@ char	*gnl_join(char *line, char *buff, int l_read, int l_line)
 
 int	main(void)
 {
-    char	*line = NULL;
-    int		fd = open("/nfs/homes/almatos/get_next_line/GNS/texto", O_RDONLY);
-    line = get_next_line(fd);
-    printf("%s", line);
+	char *line = NULL;
+	int fd = open("/nfs/homes/almatos/get_next_line/GNS/texto", O_RDONLY);
+	line = get_next_line(fd);
+	printf("%s", line);
 	printf("\n");
-    close(fd);
-    return 0;
+	close(fd);
+	return (0);
 }
