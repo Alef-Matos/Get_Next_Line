@@ -25,7 +25,7 @@ O get_next_line é um programa que retornar uma linha do arquivo lido. Com seu d
 <details open>
 <summary> Bonus </summary>
 
-- Bonus.
+- Retorna a linha do arquivo lido mas com a diferencia de fazer isso  com varios arquivos abertos ao mesmo tempo armazenando os fds numa matriz static em vez de uma string, respeitando o limite maximo de arquivos abertos.
 
 </details>
 
