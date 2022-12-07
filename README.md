@@ -31,6 +31,6 @@ O get_next_line é um programa que retornar uma linha do arquivo lido. Com seu d
 
 ## Tarefas
 
-- :white_large_square: Get_next_line.
-- :white_large_square: Bonus
-- :ballot_box_with_check:
+- :ballot_box_with_check: Get_next_line.
+- :ballot_box_with_check: Bonus
+
