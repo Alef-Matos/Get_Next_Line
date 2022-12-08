@@ -6,23 +6,11 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:04 by almatos           #+#    #+#             */
-/*   Updated: 2022/12/08 12:30:39 by almatos          ###   ########.fr       */
+/*   Updated: 2022/12/08 21:46:12 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-int	len(char *str)
-{
-	int	len;
-
-	len = 0;
-	while (str && str[len] && str[len] != '\n')
-		len++;
-	if (str && str[len] == '\n')
-		len++;
-	return (len);
-}
 
 int	clean(char *buffer)
 {
@@ -35,8 +23,7 @@ int	clean(char *buffer)
 	{
 		if (c.flag > 0)
 			buffer[c.index_b++] = buffer[c.index_a];
-		if (buffer[c.index_a] == '\n')
-			c.flag = 1;
+		c.flag += (buffer[c.index_a] == '\n');
 		buffer[c.index_a++] = '\0';
 	}
 	return (c.flag);
@@ -44,22 +31,29 @@ int	clean(char *buffer)
 
 char	*next_line(char *buffer, char *line)
 {
-	t_struct	l;
+	t_struct	n;
 
-	l.tmp_line = malloc((len(buffer) + len(line) + 1) * sizeof(char));
-	if (!l.tmp_line)
+	n.c_line = 0;
+	n.c_buff = 0;
+	while (buffer[n.c_buff] && buffer[n.c_buff] != '\n')
+		n.c_buff++;
+	n.c_buff += (buffer[n.c_buff] == '\n');
+	while (line && line[n.c_line] && line[n.c_line] != '\n')
+		n.c_line++;
+	n.temp_line = malloc(n.c_line + n.c_buff + 1);
+	if (!n.temp_line)
 		return (0);
-	l.index_a = -1;
-	while (line && line[++l.index_a])
-		l.tmp_line[l.index_a] = line[l.index_a];
-	l.index_b = 0;
-	l.index_a += (l.index_a == -1);
-	while (buffer[l.index_b] && buffer[l.index_b] != '\n')
-		l.tmp_line[l.index_a++] = buffer[l.index_b++];
-	if (buffer[l.index_b] == '\n')
-		l.tmp_line[l.index_a++] = '\n';
-	l.tmp_line[l.index_a] = '\0';
+	n.index_a = -1;
+	while (line && line[++n.index_a])
+		n.temp_line[n.index_a] = line[n.index_a];
+	n.index_b = 0;
+	n.index_a += (n.index_a == -1);
+	while (buffer[n.index_b] && buffer[n.index_b] != '\n')
+		n.temp_line[n.index_a++] = buffer[n.index_b++];
+	if (buffer[n.index_b] == '\n')
+		n.temp_line[n.index_a++] = '\n';
+	n.temp_line[n.index_a] = '\0';
 	if (line)
 		free(line);
-	return (l.tmp_line);
+	return (n.temp_line);
 }

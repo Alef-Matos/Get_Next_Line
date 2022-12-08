@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:10 by almatos           #+#    #+#             */
-/*   Updated: 2022/12/08 12:25:41 by almatos          ###   ########.fr       */
+/*   Updated: 2022/12/08 21:40:58 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@
 
 typedef struct s_gnl
 {
-	char	*tmp_line;
+	char	*temp_line;
 	int		index_a;
 	int		index_b;
 	int		flag;
+	int		c_buff;
+	int		c_line;
 }	t_struct;
 
-int		len(char *str);
 int		clean(char *buffer);
 char	*next_line(char *buffer, char *line);
 char	*get_next_line(long fd);
