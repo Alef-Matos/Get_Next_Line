@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 23:17:52 by almatos           #+#    #+#             */
-/*   Updated: 2022/12/08 23:17:54 by almatos          ###   ########.fr       */
+/*   Updated: 2022/12/08 23:20:17 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,7 @@ int	main(void)
 			free(line);
 		}
 		if (repetition - 1 != 0)
-			printf("\n***************** NEXT LINE%d *******************\n", cont);
+			printf("\n***************** NEXT LINE %d ******************\n", cont);
 		cont++;
 		index = -1;
 		repetition--;
