@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:10 by almatos           #+#    #+#             */
-/*   Updated: 2022/12/07 15:19:54 by almatos          ###   ########.fr       */
+/*   Updated: 2022/12/08 12:25:41 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 45
 # endif
+
+typedef struct s_gnl
+{
+	char	*tmp_line;
+	int		index_a;
+	int		index_b;
+	int		flag;
+}	t_struct;
 
 int		len(char *str);
 int		clean(char *buffer);

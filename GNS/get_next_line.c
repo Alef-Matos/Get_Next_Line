@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:07 by almatos           #+#    #+#             */
-/*   Updated: 2022/12/07 15:16:02 by almatos          ###   ########.fr       */
+/*   Updated: 2022/12/08 11:53:49 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*get_next_line(long fd)
 	char		*line;
 	long		size_read;
 
-	if (fd < 0 || fd > FOPEN_MAX || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
 	line = next_line(buffer, 0);
 	if (clean(buffer))
