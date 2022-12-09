@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:04 by almatos           #+#    #+#             */
-/*   Updated: 2022/12/08 21:46:12 by almatos          ###   ########.fr       */
+/*   Updated: 2022/12/09 11:04:10 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*next_line(char *buffer, char *line)
 	n.c_buff += (buffer[n.c_buff] == '\n');
 	while (line && line[n.c_line] && line[n.c_line] != '\n')
 		n.c_line++;
-	n.temp_line = malloc(n.c_line + n.c_buff + 1);
+	n.temp_line = malloc((n.c_line + n.c_buff + 1) * sizeof(char));
 	if (!n.temp_line)
 		return (0);
 	n.index_a = -1;
