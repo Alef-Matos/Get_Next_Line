@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 15:20:14 by almatos           #+#    #+#             */
-/*   Updated: 2022/12/09 15:22:32 by almatos          ###   ########.fr       */
+/*   Updated: 2022/12/09 16:03:05 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #include "get_next_line.h"
+
+
 
 int	main(void)
 {
