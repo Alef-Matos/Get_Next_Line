@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:04 by almatos           #+#    #+#             */
-/*   Updated: 2022/12/24 19:51:33 by almatos          ###   ########.fr       */
+/*   Updated: 2022/12/24 19:57:57 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	len(char *string)
 	if (string == NULL)
 		return (0);
 	while (string[count] != '\0' && string[count] != '\n')
-		count++;
+		count += 1;
 	count += (string[count] == '\n');
 	return (count);
 }
@@ -37,7 +37,8 @@ int	clear_buffer(char *buffer)
 		if (data.new_line_faund > 0)
 			buffer[data.beta_index++] = buffer[data.alpha_index];
 		data.new_line_faund += (buffer[data.alpha_index] == '\n');
-		buffer[data.alpha_index++] = '\0';
+		buffer[data.alpha_index] = '\0';
+		data.alpha_index += 1;
 	}
 	return (data.new_line_faund);
 }
