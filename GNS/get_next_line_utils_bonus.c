@@ -6,54 +6,63 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:04 by almatos           #+#    #+#             */
-/*   Updated: 2022/12/09 11:04:30 by almatos          ###   ########.fr       */
+/*   Updated: 2022/12/24 19:19:54 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-int	clean(char *buffer)
+int	len(char *string)
 {
-	t_struct	c;
+	int	count;
 
-	c.index_a = 0;
-	c.index_b = 0;
-	c.flag = 0;
-	while (buffer[c.index_a])
-	{
-		if (c.flag > 0)
-			buffer[c.index_b++] = buffer[c.index_a];
-		c.flag += (buffer[c.index_a] == '\n');
-		buffer[c.index_a++] = '\0';
-	}
-	return (c.flag);
+	count = 0;
+	if (string == NULL)
+		return (0);
+	while (string[count] && string[count] != '\n')
+		count++;
+	count += (string[count] == '\n');
+	return (count);
 }
 
-char	*next_line(char *buffer, char *line)
+int	clean_buffer(char *buffer)
 {
-	t_struct	n;
+	t_struct	data;
 
-	n.c_line = 0;
-	n.c_buff = 0;
-	while (buffer[n.c_buff] && buffer[n.c_buff] != '\n')
-		n.c_buff++;
-	n.c_buff += (buffer[n.c_buff] == '\n');
-	while (line && line[n.c_line] && line[n.c_line] != '\n')
-		n.c_line++;
-	n.temp_line = malloc((n.c_line + n.c_buff + 1) * sizeof(char));
-	if (!n.temp_line)
+	data.index_a = 0;
+	data.index_b = 0;
+	data.new_line_faund = 0;
+	while (buffer[data.index_a])
+	{
+		if (data.new_line_faund > 0)
+			buffer[data.index_b++] = buffer[data.index_a];
+		data.new_line_faund += (buffer[data.index_a] == '\n');
+		buffer[data.index_a++] = '\0';
+	}
+	return (data.new_line_faund);
+}
+
+char	*create_line(char *buffer, char *new_line)
+{
+	t_struct	data;
+
+	data.size_line = len(new_line);
+	data.size_buffer = len(buffer);
+	data.new_line = malloc((data.size_line + data.size_buffer + 1)
+			* sizeof(char));
+	if (data.new_line == NULL)
 		return (0);
-	n.index_a = -1;
-	while (line && line[++n.index_a])
-		n.temp_line[n.index_a] = line[n.index_a];
-	n.index_b = 0;
-	n.index_a += (n.index_a == -1);
-	while (buffer[n.index_b] && buffer[n.index_b] != '\n')
-		n.temp_line[n.index_a++] = buffer[n.index_b++];
-	if (buffer[n.index_b] == '\n')
-		n.temp_line[n.index_a++] = '\n';
-	n.temp_line[n.index_a] = '\0';
-	if (line)
-		free(line);
-	return (n.temp_line);
+	data.index_a = -1;
+	while (new_line && new_line[++data.index_a])
+		data.new_line[data.index_a] = new_line[data.index_a];
+	data.index_b = 0;
+	data.index_a += (data.index_a == -1);
+	while (buffer[data.index_b] && buffer[data.index_b] != '\n')
+		data.new_line[data.index_a++] = buffer[data.index_b++];
+	if (buffer[data.index_b] == '\n')
+		data.new_line[data.index_a++] = '\n';
+	data.new_line[data.index_a] = '\0';
+	if (new_line)
+		free(new_line);
+	return (data.new_line);
 }
