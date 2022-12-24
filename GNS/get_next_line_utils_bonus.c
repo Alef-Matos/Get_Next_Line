@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:04 by almatos           #+#    #+#             */
-/*   Updated: 2022/12/24 19:48:09 by almatos          ###   ########.fr       */
+/*   Updated: 2022/12/24 19:51:24 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	len(char *string)
 	count = 0;
 	if (string == NULL)
 		return (0);
-	while (string[count] && string[count] != '\n')
+	while (string[count] != '\0' && string[count] != '\n')
 		count++;
 	count += (string[count] == '\n');
 	return (count);
