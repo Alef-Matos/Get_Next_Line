@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:04 by almatos           #+#    #+#             */
-/*   Updated: 2022/12/24 19:19:54 by almatos          ###   ########.fr       */
+/*   Updated: 2022/12/24 19:32:27 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	len(char *string)
 	return (count);
 }
 
-int	clean_buffer(char *buffer)
+int	clear_buffer(char *buffer)
 {
 	t_struct	data;
 

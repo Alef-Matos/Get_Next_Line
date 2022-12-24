@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:07 by almatos           #+#    #+#             */
-/*   Updated: 2022/12/24 19:15:41 by almatos          ###   ########.fr       */
+/*   Updated: 2022/12/24 19:32:41 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*get_next_line(long fd)
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	return_line = create_line(buffer, 0);
-	if (clean_buffer(buffer))
+	if (clear_buffer(buffer))
 		return (return_line);
 	size_read = 1;
 	while (size_read > 0)
@@ -33,7 +33,7 @@ char	*get_next_line(long fd)
 			return (NULL);
 		}
 		return_line = create_line(buffer, return_line);
-		if (clean_buffer(buffer))
+		if (clear_buffer(buffer))
 			break ;
 	}
 	return (return_line);
