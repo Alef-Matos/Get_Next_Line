@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:04 by almatos           #+#    #+#             */
-/*   Updated: 2022/12/24 19:32:27 by almatos          ###   ########.fr       */
+/*   Updated: 2022/12/24 19:39:47 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ int	clear_buffer(char *buffer)
 {
 	t_struct	data;
 
-	data.index_a = 0;
-	data.index_b = 0;
+	data.alpha_index = 0;
+	data.beta_index = 0;
 	data.new_line_faund = 0;
-	while (buffer[data.index_a])
+	while (buffer[data.alpha_index])
 	{
 		if (data.new_line_faund > 0)
-			buffer[data.index_b++] = buffer[data.index_a];
-		data.new_line_faund += (buffer[data.index_a] == '\n');
-		buffer[data.index_a++] = '\0';
+			buffer[data.beta_index++] = buffer[data.alpha_index];
+		data.new_line_faund += (buffer[data.alpha_index] == '\n');
+		buffer[data.alpha_index++] = '\0';
 	}
 	return (data.new_line_faund);
 }
@@ -52,16 +52,16 @@ char	*create_line(char *buffer, char *new_line)
 			* sizeof(char));
 	if (data.new_line == NULL)
 		return (0);
-	data.index_a = -1;
-	while (new_line && new_line[++data.index_a])
-		data.new_line[data.index_a] = new_line[data.index_a];
-	data.index_b = 0;
-	data.index_a += (data.index_a == -1);
-	while (buffer[data.index_b] && buffer[data.index_b] != '\n')
-		data.new_line[data.index_a++] = buffer[data.index_b++];
-	if (buffer[data.index_b] == '\n')
-		data.new_line[data.index_a++] = '\n';
-	data.new_line[data.index_a] = '\0';
+	data.alpha_index = -1;
+	while (new_line && new_line[++data.alpha_index])
+		data.new_line[data.alpha_index] = new_line[data.alpha_index];
+	data.beta_index = 0;
+	data.alpha_index += (data.alpha_index == -1);
+	while (buffer[data.beta_index] && buffer[data.beta_index] != '\n')
+		data.new_line[data.alpha_index++] = buffer[data.beta_index++];
+	if (buffer[data.beta_index] == '\n')
+		data.new_line[data.alpha_index++] = '\n';
+	data.new_line[data.alpha_index] = '\0';
 	if (new_line)
 		free(new_line);
 	return (data.new_line);
