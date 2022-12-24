@@ -6,7 +6,7 @@
 /*   By: almatos <almatos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 09:27:04 by almatos           #+#    #+#             */
-/*   Updated: 2022/12/24 19:39:47 by almatos          ###   ########.fr       */
+/*   Updated: 2022/12/24 19:48:09 by almatos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	clear_buffer(char *buffer)
 	data.alpha_index = 0;
 	data.beta_index = 0;
 	data.new_line_faund = 0;
-	while (buffer[data.alpha_index])
+	while (buffer[data.alpha_index] != '\0')
 	{
 		if (data.new_line_faund > 0)
 			buffer[data.beta_index++] = buffer[data.alpha_index];
@@ -53,11 +53,11 @@ char	*create_line(char *buffer, char *new_line)
 	if (data.new_line == NULL)
 		return (0);
 	data.alpha_index = -1;
-	while (new_line && new_line[++data.alpha_index])
+	while (new_line && new_line[++data.alpha_index] != '\0')
 		data.new_line[data.alpha_index] = new_line[data.alpha_index];
 	data.beta_index = 0;
 	data.alpha_index += (data.alpha_index == -1);
-	while (buffer[data.beta_index] && buffer[data.beta_index] != '\n')
+	while (buffer[data.beta_index] != '\0' && buffer[data.beta_index] != '\n')
 		data.new_line[data.alpha_index++] = buffer[data.beta_index++];
 	if (buffer[data.beta_index] == '\n')
 		data.new_line[data.alpha_index++] = '\n';
